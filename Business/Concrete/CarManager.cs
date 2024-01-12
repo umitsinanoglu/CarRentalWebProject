@@ -11,7 +11,7 @@ using Entities.DTOs;
 
 namespace Business.Concrete
 {
-    [MaintenanceAspect(11)]
+    [MaintenanceAspect(14)]
     public class CarManager : ICarService
     {
         ICarDal _carDal;
