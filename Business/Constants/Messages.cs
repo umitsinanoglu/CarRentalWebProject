@@ -57,5 +57,11 @@
         public static string RentalAlreadyExists = "Kampanya mevcuttur, başka bir kampanya girmeyi deneyiniz.";
 
         public static string CarNameAlreadyExists = "Araç adı mevcuttur, başka bir araç adı girmeyi deneyiniz.";
+        public static string CarImageAdded = "Araç Resmi eklendi.";
+        public static string CarImageUpdated = "Araç Resmi güncellendi.";
+        public static string CarImagesListed = "Araç Resimleri listelendi.";
+        public static string CarImageDeleted = "Araç Resmi silindi.";
+        public static string CarImageIdInvalid = "Araç Resim Id geçerli değil.";
+        public static string CarImageLimitExceeded = "Araç Resim sayısı aşıldı.";
     }
 }

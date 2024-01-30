@@ -47,9 +47,17 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Update(Car car)
         {
+            IResult result = BusinessRules.Run(CheckIfCarModelNameExists(car.ModelName));
+
+            if (result != null)
+            {
+                return result;
+            }
+
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
+
         private IResult CheckIfCarModelNameExists(string modelName)
         {
             var result = _carDal.GetList(c => c.ModelName == modelName).Any();
@@ -63,7 +71,6 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetAllByDailyPriceRange(decimal min, decimal max)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetList(c => c.DailyPrice >= min && c.DailyPrice <= max).ToList(), Messages.CarsListed);
-
         }
 
         public IDataResult<Car> GetById(int id)
@@ -93,12 +100,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetList(c => c.ColorId == colorId).ToList(), Messages.CarsListed);
         }
 
-
         public IDataResult<List<CarDetailDto>> GetCarDetails()
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), Messages.CarsListed);
         }
-
 
         public IResult DeleteById(int id)
         {
@@ -107,11 +112,9 @@ namespace Business.Concrete
             if (result == null)
             {
                 return new ErrorResult(Messages.CarIdInvalid);
-
             }
             _carDal.Delete(result.Data);
             return new SuccessResult(Messages.CarDeleted);
-
         }
 
         public IResult DeleteByName(string ModelName)
@@ -139,7 +142,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetList(c => c.ColorId == colorId).ToList());
         }
-
 
     }
 }
