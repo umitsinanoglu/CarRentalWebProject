@@ -1,6 +1,5 @@
-﻿using Core.Utilities.Interceptors;
-using Castle.DynamicProxy;
-using System;
+﻿using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 
 namespace Core.Aspects.Autofac.Maintenance
 {

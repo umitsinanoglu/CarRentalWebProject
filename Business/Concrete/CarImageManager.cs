@@ -39,7 +39,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.CarImageLimitExceeded);
             }
-            return new SuccessResult();
+            return new SuccessResult("");
         }
         public IResult Delete(int carImageId)
         {

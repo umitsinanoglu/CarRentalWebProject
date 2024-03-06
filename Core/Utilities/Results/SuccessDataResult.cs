@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Utilities.Results
+﻿namespace Core.Utilities.Results
 {
     public class SuccessDataResult<T> : DataResult<T>
     {
@@ -20,7 +14,7 @@ namespace Core.Utilities.Results
         {
 
         }
-        public SuccessDataResult():base(default, true)
+        public SuccessDataResult() : base(default, true)
         {
 
         }

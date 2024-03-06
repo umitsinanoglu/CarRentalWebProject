@@ -15,11 +15,11 @@
         public static string ColorNameInvalid = "Araç renk adı hatalı.";
         public static string BrandIdInvalid = "Araç model id hatalı.";
 
-        public static string ColorAdded =   "Renk başarı ile eklendi";
+        public static string ColorAdded = "Renk başarı ile eklendi";
         public static string ColorUpdated = "Renk başarı ile güncellendi";
         public static string ColorDeleted = "Renk başarı ile silindi";
         public static string ColorsListed = "Renkler listelendi";
-        public static string ColorListed =  "Renk listelendi";
+        public static string ColorListed = "Renk listelendi";
         public static string ColorNameAlreadyExists = "Renk mevcuttur, başka bir renk girmeyi deneyiniz.";
 
         public static string BrandAdded = "Marka başarı ile eklendi";
@@ -63,5 +63,14 @@
         public static string CarImageDeleted = "Araç Resmi silindi.";
         public static string CarImageIdInvalid = "Araç Resim Id geçerli değil.";
         public static string CarImageLimitExceeded = "Araç Resim sayısı aşıldı.";
+
+        public static string AuthorizationDenied = "Yetkilendirme reddedildi.";
+        public static string UserNotFound = "Kullanıcı bulunamadı.";
+        public static string UserRegistered = "Kullanıcı kaydedildi.";
+        public static string PasswordError = "Parola hatası.";
+        public static string SuccessfulLogin = "Başarılı giriş.";
+        public static string UserAlreadyExists = "Kullanıcı zaten mevcut.";
+        public static string AccessTokenCreated = "Erişim belirteci oluşturuldu.";
+        public static string AddedUser = "Kullanıcı eklendi.";
     }
 }

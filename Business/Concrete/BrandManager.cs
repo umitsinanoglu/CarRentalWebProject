@@ -3,7 +3,6 @@ using Business.Constants;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 
 namespace Business.Concrete
@@ -37,7 +36,7 @@ namespace Business.Concrete
                 return new ErrorResult();
             }
             _brandDal.Delete(result);
-            return new SuccessResult();
+            return new SuccessResult("");
         }
         public IResult Update(Brand brand)
         {
@@ -63,7 +62,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.BrandNameAlreadyExists);
             }
 
-            return new SuccessResult();
+            return new SuccessResult("");
         }
     }
 }

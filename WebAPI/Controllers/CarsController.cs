@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -41,13 +40,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Car car)
+        public IActionResult Add([FromBody] Car car)
         {
             var result = _carService.Add(car);
             if (result.IsSuccess)
             {
                 return Ok(result);
             }
+
             return BadRequest(result);
         }
 

@@ -1,7 +1,9 @@
-﻿using Business.Abstract;
+﻿
 using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+
 
 namespace ConsoleUi
 {
@@ -39,12 +41,12 @@ namespace ConsoleUi
 
             var userList = new List<User>
             {
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
-                new User { Email = GetRandomEmail(), Password = GetRandomPassword(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() }
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName()  },
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() },
+                new User { Email = GetRandomEmail(), FirstName = GetRandomFirstName(), LastName = GetRandomLastName() }
             };
 
             foreach (var user in userList)

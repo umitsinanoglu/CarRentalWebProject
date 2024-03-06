@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Maintenance;
@@ -11,7 +12,7 @@ using Entities.DTOs;
 
 namespace Business.Concrete
 {
-    [MaintenanceAspect(14)]
+    [MaintenanceAspect(23)]
     public class CarManager : ICarService
     {
         ICarDal _carDal;
@@ -20,11 +21,14 @@ namespace Business.Concrete
         {
             _carDal = cardal;
         }
+        
+        //[SecuredOperation("car.add,Admin")]
+        [SecuredOperation("car.list")]
         public IDataResult<List<Car>> GetList()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetList().ToList());
         }
-
+        
         [ValidationAspect(typeof(CarValidator), Priority = 1)]
         public IResult Add(Car car)
         {
@@ -66,7 +70,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CarNameAlreadyExists);
             }
 
-            return new SuccessResult();
+            return new SuccessResult("");
         }
         public IDataResult<List<Car>> GetAllByDailyPriceRange(decimal min, decimal max)
         {
